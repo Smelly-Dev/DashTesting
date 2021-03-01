@@ -1,0 +1,15 @@
+add_filter( 'woocommerce_thankyou_order_received_text', 'misha_thank_you_title', 20, 2 );
+function misha_thank_you_title( $thank_you_title, $order ){
+    $myuser_id = (int)$order->user_id;
+    $user_info = get_userdata($myuser_id);
+    $items = $order->get_items();
+	$username = $user_info->user_login
+    foreach ($items as $item) {
+        if ($item['variation_id']==442) {
+          // Do something clever
+			return 'Oh User already Exists;
+        }
+    }
+ 
+}
+
